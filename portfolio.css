@@ -266,6 +266,7 @@ footer {
   }
   .menu-toggle {
     display: block;
+    z-index: 1200;
   }
   nav {
     position: relative;

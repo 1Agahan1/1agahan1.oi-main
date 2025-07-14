@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+}
+header {
+  height: 50px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #333;
+  padding: 1rem;
+  position: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  display: flex;
+  justify-content: right;
+  gap: 2rem;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #69c3ff;
+}
+
+.projects {
+  padding: 4rem 2rem;
+}
+
+.projects h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: #333;
+  position: relative;
+}
+
+.projects h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #69c3ff;
+  border-radius: 2px;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-item {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* Animated background for project items */
+  position: relative;
+  overflow: hidden;
+}
+
+.project-item .animated-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%);
+    z-index: 1;
+}
+
+.project-item .animated-dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.project-item .dot {
+    position: absolute;
+    background: #3498db;
+    border-radius: 50%;
+    opacity: 0.15;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+    animation: float 3s ease-in-out infinite;
+    animation-delay: calc(var(--delay) * 1s);
+}
+
+.project-item > *:not(.animated-background) {
+    position: relative;
+    z-index: 2;
+}
+
+.project-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #69c3ff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-item:hover::before {
+  transform: scaleX(1);
+}
+
+.project-icon {
+  font-size: 2.5rem;
+  color: #69c3ff;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.project-item h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.project-item p {
+  color: #666;
+  flex-grow: 1;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* Button styles */
+.project-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #69c3ff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #69c3ff;
+  border: 2px solid #69c3ff;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #333;
+  color: white;
+  margin-top: 4rem;
+}
+
+.social-links {
+  margin-bottom: 1rem;
+}
+
+.social-icon {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #69c3ff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .project-list {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+  }
+  
+  .projects {
+      padding: 2rem 1rem;
+  }
+  
+  .projects h2 {
+      font-size: 2rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .project-list {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

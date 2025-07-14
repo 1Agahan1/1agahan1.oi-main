@@ -144,3 +144,20 @@ function handleContactForm() {
 }
 
 document.addEventListener('DOMContentLoaded', handleContactForm);
+
+// Mobile menu functionality
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('#menu-nav');
+
+// Display Mobile Menu
+const mobileMenu = () => {
+  menu.classList.toggle('is-active');
+  menuLinks.classList.toggle('active');
+};
+menuLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('is-active');
+        menuLinks.classList.remove('active');
+      });
+    });
+menu.addEventListener('click', mobileMenu);

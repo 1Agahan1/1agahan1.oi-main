@@ -20,12 +20,20 @@ header {
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+nav ul li {
+  margin: 0 1rem;
+}
 nav ul {
   display: flex;
   justify-content: right;
   gap: 2rem;
   list-style: none;
+   margin: 0;
+  padding: 0;
 }
 
 nav a {
@@ -487,21 +495,54 @@ footer {
     }
 }
 
-/* Hamburger menu styles */
-.menu-toggle {
+/* Hamburger menu styles for .navbar__toggle */
+.navbar__toggle {
   display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 2rem;
+  flex-direction: column;
   cursor: pointer;
-  position: absolute;
-  right: 1.5rem;
-  top: 1.2rem;
   z-index: 1100;
+  height: 29px;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
+/* Enhanced hamburger bar animation */
+.bar {
+  display: flex;
+  width: 15px;
+  height: 3px;
+  margin: 4px 0;
+  background-color: white;
+  border-radius: 2px;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.25s cubic-bezier(0.4,0,0.2,1), background 0.3s;
+  transform-origin: center left;
+}
+
+.navbar__toggle.is-active .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+  transition-delay: 0.08s;
+}
+.navbar__toggle.is-active .bar:nth-child(2) {
+  opacity: 0;
+  transition-delay: 0s;
+}
+.navbar__toggle.is-active .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+  transition-delay: 0.08s;
+}
+
+.navbar__toggle .bar:nth-child(1),
+.navbar__toggle .bar:nth-child(3) {
+  transition-delay: 0s;
+}
+
+.navbar__toggle.is-active .bar {
+  background: #ffffff;
+}
 @media (max-width: 768px) {
+  .navbar__toggle {
+    display: flex;
+  }
   nav ul {
     display: none;
     flex-direction: column;
@@ -514,12 +555,10 @@ footer {
     border-radius: 0 0 8px 8px;
     padding: 1rem 0;
     transition: all 0.3s ease;
+    z-index: 1000;
   }
   nav ul.active {
     display: flex;
-  }
-  .menu-toggle {
-    display: block;
   }
   nav {
     position: relative;
@@ -529,4 +568,5 @@ footer {
     text-align: right;
     padding: 0 1.5rem;
   }
+
 }

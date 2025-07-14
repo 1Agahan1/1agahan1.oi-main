@@ -130,3 +130,21 @@ function createAnimatedBackgroundForProjects() {
 }
 
 document.addEventListener('DOMContentLoaded', createAnimatedBackgroundForProjects);
+
+// Mobile menu functionality
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('#menu-nav');
+
+const mobileMenu = () => {
+  menu.classList.toggle('is-active');
+  menuLinks.classList.toggle('active');
+};
+
+menuLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('is-active');
+    menuLinks.classList.remove('active');
+  });
+});
+
+menu.addEventListener('click', mobileMenu);

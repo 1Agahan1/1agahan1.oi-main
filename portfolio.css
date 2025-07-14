@@ -40,6 +40,20 @@ nav a:hover {
   color: #69c3ff;
 }
 
+/* Hamburger menu styles */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.2rem;
+  z-index: 1100;
+}
+
 .projects {
   padding: 4rem 2rem;
 }
@@ -233,6 +247,33 @@ footer {
   
   .projects h2 {
       font-size: 2rem;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    border-radius: 0 0 8px 8px;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  nav {
+    position: relative;
+  }
+  nav ul li {
+    margin: 0.5rem 0;
+    text-align: right;
+    padding: 0 1.5rem;
   }
 }
 

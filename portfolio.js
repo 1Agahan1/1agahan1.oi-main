@@ -144,22 +144,3 @@ function handleContactForm() {
 }
 
 document.addEventListener('DOMContentLoaded', handleContactForm);
-
-// Responsive mobile menu
-function setupMobileMenu() {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navUl = document.getElementById('main-nav');
-  if (!menuToggle || !navUl) return;
-  menuToggle.addEventListener('click', () => {
-    navUl.classList.toggle('active');
-  });
-  // Close menu when a link is clicked (on mobile)
-  navUl.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        navUl.classList.remove('active');
-      }
-    });
-  });
-}
-document.addEventListener('DOMContentLoaded', setupMobileMenu);

@@ -10,7 +10,7 @@ body {
     background-color: #f9f9f9;
 }
 header {
-  height: 50px;
+  height: auto;
   background-color: #333;
   padding: 1rem;
   position: auto;
@@ -26,6 +26,8 @@ nav ul li a {
 }
 nav ul li {
   margin: 0 1rem;
+  display: flex;
+  align-items: center;
 }
 nav ul {
   display: flex;
@@ -250,6 +252,81 @@ footer {
 .navbar__toggle.is-active .bar {
   background: #ffffff;
 }
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #181a1b !important;
+    color: #f1f1f1 !important;
+    transition: background-color 0.3s, color 0.3s;
+}
+body.dark-mode header,
+body.dark-mode nav {
+    background-color: #23272a !important;
+    color: #f1f1f1 !important;
+}
+body.dark-mode nav a,
+body.dark-mode nav ul li a {
+    color: #f1f1f1 !important;
+}
+body.dark-mode nav a:hover {
+    color: #69c3ff !important;
+}
+body.dark-mode .project-item {
+    background: #23272a !important;
+    color: #f1f1f1 !important;
+}
+body.dark-mode .project-item h3 {
+    color: #f1f1f1 !important;
+}
+body.dark-mode .project-item p {
+    color: #bdbdbd !important;
+}
+body.dark-mode .btn-primary {
+    background-color: #69c3ff !important;
+    color: #fff !important;
+}
+body.dark-mode .btn-secondary {
+    background-color: transparent !important;
+    color: #69c3ff !important;
+    border: 2px solid #69c3ff !important;
+}
+body.dark-mode .social-icon {
+    color: #f1f1f1 !important;
+}
+body.dark-mode .social-icon:hover {
+    color: #69c3ff !important;
+}
+body.dark-mode footer,
+body.dark-mode .site-footer {
+  background-color: #101114 !important;
+  color: #f1f1f1 !important;
+}
+body.dark-mode section:nth-of-type(odd) {
+  background-color: #181a1b !important;
+}
+body.dark-mode section:nth-of-type(even) {
+  background-color: #23272a !important;
+}
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.2rem 0.7rem;
+  margin: 0;
+  transition: color 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+}
+#dark-mode-toggle.icon-animate {
+  transform: rotate(180deg) scale(1.2);
+}
+#dark-mode-toggle:hover {
+  color: #69c3ff;
+}
+body.dark-mode #dark-mode-toggle {
+  color: #69c3ff;
+}
 @media (max-width: 768px) {
   .project-list {
       grid-template-columns: 1fr;
@@ -309,4 +386,125 @@ footer {
     100% {
         transform: translateY(0);
     }
+}
+/* Footer styles */
+.site-footer {
+  background: #181d25;
+  color: #e0e6ed;
+  padding: 3rem 0 1.5rem 0;
+  margin-top: 4rem;
+  position: relative;
+  font-size: 1rem;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.footer-col {
+  flex: 1 1 250px;
+  min-width: 220px;
+}
+.footer-col.profile h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.footer-col.profile p {
+  margin-bottom: 1.2rem;
+  color: #b0b8c1;
+}
+.footer-social a {
+  color: #b0b8c1;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: color 0.2s;
+}
+.footer-social a:hover {
+  color: #69c3ff;
+}
+.footer-col.links h3,
+.footer-col.updates h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.footer-col.links ul,
+.footer-col.updates ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-col.links li,
+.footer-col.updates li {
+  margin-bottom: 0.7rem;
+}
+.footer-col.links a {
+  color: #e0e6ed;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col.links a:hover {
+  color: #69c3ff;
+}
+.footer-col.updates span {
+  color: #e0e6ed;
+}
+.footer-col.updates small {
+  color: #b0b8c1;
+  font-size: 0.9em;
+}
+.footer-divider {
+  border: none;
+  border-top: 1px solid #23272f;
+  margin: 1rem auto 1.5rem auto;
+  max-width: 1200px;
+  width: 80%;
+}
+.footer-bottom {
+  text-align: center;
+  color: #b0b8c1;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+#scrollToTop {
+  position: fixed;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  cursor: pointer;
+  z-index: 100;
+  transition: background 0.2s, opacity 0.2s;
+  opacity: 0.85;
+}
+#scrollToTop:hover {
+  background: #69c3ff;
+  opacity: 1;
+}
+@media (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: flex-start;
+  }
+  .footer-col {
+    min-width: 0;
+  }
+  .footer-bottom {
+    text-align: center;
+  }
 }

@@ -161,3 +161,58 @@ menuLinks.querySelectorAll('a').forEach(link => {
       });
     });
 menu.addEventListener('click', mobileMenu);
+
+// Dark mode toggle functionality
+function setupDarkModeToggle() {
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    if (!toggleBtn) return;
+    const body = document.body;
+    // Helper to update icon
+    function updateIcon() {
+        if (body.classList.contains('dark-mode')) {
+            toggleBtn.classList.remove('fa-sun');
+            toggleBtn.classList.add('fa-moon');
+        } else {
+            toggleBtn.classList.remove('fa-moon');
+            toggleBtn.classList.add('fa-sun');
+        }
+        toggleBtn.classList.add('icon-animate');
+        setTimeout(() => toggleBtn.classList.remove('icon-animate'), 300);
+    }
+    // Load preference
+    const darkModePref = localStorage.getItem('darkMode');
+    if (darkModePref === 'enabled') {
+        body.classList.add('dark-mode');
+    }
+    updateIcon();
+    toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+        }
+        updateIcon();
+    });
+}
+document.addEventListener('DOMContentLoaded', setupDarkModeToggle);
+
+// Scroll-to-top button functionality
+function setupScrollToTop() {
+  const btn = document.getElementById('scrollToTop');
+  if (!btn) return;
+  // Show/hide button on scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      btn.style.display = 'flex';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  // Hide initially
+  btn.style.display = 'none';
+}
+document.addEventListener('DOMContentLoaded', setupScrollToTop);

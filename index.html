@@ -553,7 +553,7 @@ dialog#proj[open]{animation:pop .32s cubic-bezier(.22,1,.36,1)}
 
 <footer>
   <div class="wrap foot">
-    <p>© <span 2024></span> Dan Williams Nesortado — Bicol, Philippines ·</p>
+    <p>© 2024 Dan Williams Nesortado — Bicol, Philippines</p>
     <button id="toTop">Back to top ↑</button>
   </div>
 </footer>
@@ -798,7 +798,6 @@ const secIO = new IntersectionObserver(es=>{
 ["work","about","credentials","contact"].forEach(id=>secIO.observe(document.getElementById(id)));
 
 /* ================= misc ================= */
-$("#yr").textContent = new Date().getFullYear();
 $("#toTop").addEventListener("click", ()=>window.scrollTo({top:0, behavior:"smooth"}));
 addEventListener("load", ()=>document.body.classList.add("ready"));
 if (document.readyState === "complete") document.body.classList.add("ready");

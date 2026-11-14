@@ -421,7 +421,7 @@ dialog#proj[open]{animation:pop .32s cubic-bezier(.22,1,.36,1)}
         <h2 class="rise" style="--i:2">I’m Dan — I turn local problems into working systems.</h2>
         <p class="lede rise" style="--i:3">Software engineer and BSIT student building census tools, attendance trackers and scholarship platforms — from database design to the interface. Also shipping React apps, games and an AI chat assistant on the side.</p>
         <div class="btns rise" style="--i:4">
-          <a href="#work">Work<small>11 projects</small></a>
+          <a href="#work">Work<small id="workCount">8 projects</small></a>
           <a href="#about">About me<small>the story</small></a>
           <a href="#contact">Let’s talk<small>say hi</small></a>
         </div>
@@ -443,7 +443,7 @@ dialog#proj[open]{animation:pop .32s cubic-bezier(.22,1,.36,1)}
           <span class="kicker"><b>01</b> — Work</span>
           <h2 class="sec-title">Selected projects</h2>
         </div>
-        <span class="count" id="projCount">11 / 11 shown</span>
+        <span class="count" id="projCount">8 / 8 shown</span>
       </div>
       <div class="filters rv" style="--i:1" role="group" aria-label="Filter projects">
         <button data-filter="all" aria-pressed="true">All</button>
@@ -541,7 +541,7 @@ dialog#proj[open]{animation:pop .32s cubic-bezier(.22,1,.36,1)}
 
 <footer>
   <div class="wrap foot">
-    <p>© <span id="yr"></span> Dan Williams Nesortado — Bicol, Philippines · Fig. 01–11</p>
+    <p>© <span id="yr"></span> Dan Williams Nesortado — Bicol, Philippines · Fig. 01–08</p>
     <button id="toTop">Back to top ↑</button>
   </div>
 </footer>
@@ -616,22 +616,7 @@ const PROJECTS = [
    desc:"Census system with database integration for residents, households and puroks.",
    long:"A desktop census system for barangay-level data: residents belong to households, households to puroks, all persisted in a relational database and managed through a JavaFX interface.",
    feat:["Resident, household and purok records","Relational persistence via JDBC","Desktop UI built with JavaFX"],
-   tags:["Java","JavaFX","JDBC","MySQL"], live:null, code:null},
-  {id:"scholar", cat:"systems", title:"Scholarship Information System",
-   desc:"Web platform for scholarship application, evaluation and monitoring — our BSIT capstone at CBSUA Sipocot.",
-   long:"Our capstone: a web platform where students apply for scholarships, evaluators review applications, and administrators monitor grants — backed by a designed-from-scratch database.",
-   feat:["Application, evaluation and monitoring flows","Role-based views for applicants and staff","Capstone project, BSIT — CBSUA Sipocot"],
-   tags:["Web","Database","BSIT Capstone"], live:null, code:null},
-  {id:"bio", cat:"systems", title:"Biometric Attendance",
-   desc:"Fingerprint-based student attendance with a desktop app and a USB scanner.",
-   long:"Students tap a USB fingerprint scanner; the desktop app matches the print and logs attendance against the class roster — no paper sheets, no manual encoding.",
-   feat:["Fingerprint capture via USB scanner","Automatic attendance logging","Simple desktop interface for class rosters"],
-   tags:["Desktop","Biometrics","Database"], live:null, code:null},
-  {id:"hospital", cat:"systems", title:"Hospital Database",
-   desc:"Relational schema for doctors, patients, appointments and departments, with analytic queries.",
-   long:"A normalized MySQL schema modeling a hospital: doctors, patients, departments and appointments, plus analytic queries for schedules and loads.",
-   feat:["Normalized relational schema","Appointment and department modeling","Analytic SQL queries"],
-   tags:["MySQL","SQL","Schema design"], live:null, code:null}
+   tags:["Java","JavaFX","JDBC","MySQL"], live:null, code:null}
 ];
 
 /* ================= helpers ================= */
@@ -712,6 +697,8 @@ PROJECTS.forEach((p,i)=>{
   });
   grid.appendChild(el);
 });
+$("#projCount").textContent = PROJECTS.length + " / " + PROJECTS.length + " shown";
+$("#workCount").textContent = PROJECTS.length + " projects";
 
 /* ================= filters ================= */
 $$(".filters button").forEach(btn=>{

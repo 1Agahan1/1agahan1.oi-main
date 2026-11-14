@@ -1,158 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Agahan's projects in web development and design." />
-    <title>Projects - Agahan's Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="portfolio.css">
-    <link rel="icon" type="image/jpeg" href="image/selfie.jpg">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="0;url=index.html#work">
+<link rel="canonical" href="index.html#work">
+<link rel="icon" type="image/jpeg" href="image/selfie.jpg">
+<title>Projects — Agahan</title>
+<style>
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:#ededeb;color:#161615;font-family:Inter,system-ui,sans-serif}
+@media (prefers-color-scheme:dark){body{background:#131514;color:#f0f0ec}}
+p{font-size:15px}a{color:#285a46;font-weight:600}
+@media (prefers-color-scheme:dark){a{color:#4a9a76}}
+</style>
 </head>
 <body>
-    <main>
-    <header>
-        <nav>
-            <ul id="menu-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">My Projects</a></li>
-                <li><button id="dark-mode-toggle" aria-label="Toggle dark mode" class="fas fa-sun"></button></li>
-            </ul>
-            <div class="navbar__toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
-        <section class="projects" id="projects">
-            <h2>My Projects</h2>
-            <div class="project-list">
-                <div class="project-item">
-                    <div class="project-icon">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <h3>React Calculator</h3>
-                    <p>A fully functional calculator built with React, featuring a clean interface and comprehensive arithmetic operations.</p>
-                    <div class="project-buttons">
-                        <a href="https://1agahan1.github.io/fcc-reactcalculator-d/" class="btn btn-primary" target="_blank">Live Demo</a>
-                        <a href="https://codepen.io/Dan-Williams-Nesortado/pen/NPKdrQO" class="btn btn-secondary" target="_blank">Source Code</a>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>25/5 Clock</h3>
-                    <p>A Pomodoro timer application that helps users manage their work and break sessions effectively.</p>
-                    <div class="project-buttons">
-                        <a href="https://1agahan1.github.io/fcc-25-5-Clock-d/" class="btn btn-primary" target="_blank">Live Demo</a>
-                        <a href="https://codepen.io/Dan-Williams-Nesortado/pen/raBjMgy" class="btn btn-secondary" target="_blank">Source Code</a>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-icon">
-                        <i class="fas fa-drum"></i>
-                    </div>
-                    <h3>Drum Machine</h3>
-                    <p>An interactive drum machine with keyboard controls and various sound effects, built using React.</p>
-                    <div class="project-buttons">
-                        <a href="https://codepen.io/Dan-Williams-Nesortado/full/RNbKpoQ" class="btn btn-primary" target="_blank">Live Demo</a>
-                        <a href="https://codepen.io/Dan-Williams-Nesortado/pen/RNbKpoQ" class="btn btn-secondary" target="_blank">Source Code</a>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-icon">
-                        <i class="fas fa-quote-right"></i>
-                    </div>
-                    <h3>Random Quote Machine</h3>
-                    <p>A dynamic quote generator that displays inspirational quotes with smooth transitions and social sharing.</p>
-                    <div class="project-buttons">
-                        <a href="https://codepen.io/Dan-Williams-Nesortado/full/NPKdrQO" class="btn btn-primary" target="_blank">Live Demo</a>
-                        <a href="https://codepen.io/Dan-Williams-Nesortado/pen/NPKdrQO" class="btn btn-secondary" target="_blank">Source Code</a>
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="project-icon">
-                        <i class="fas fa-hand-rock"></i>
-                    </div>
-                    <h3>Rock, Paper, and Scissors Game</h3>
-                    <p>An interactive web-based game where players compete against the computer in the classic rock, paper, scissors game with score tracking and dynamic animations.</p>
-                    <div class="project-buttons">
-                        <a href="https://1agahan1.github.io/RPS/" class="btn btn-primary" target="_blank">Live Demo</a>
-                        <a href="https://github.com/1Agahan1/RPS" class="btn btn-secondary" target="_blank">Source Code</a>
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="project-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3>ONLINE_SHOP_APP_DEMO</h3>
-                    <p>A fully functional e-commerce web application featuring product catalog, shopping cart functionality, and responsive design for seamless online shopping experience.</p>
-                    <div class="project-buttons">
-                        <a href="https://1agahan1.github.io/ONLINE_SHOP_APP/" class="btn btn-primary" target="_blank">Live Demo</a>
-                        <a href="https://github.com/1Agahan1/ONLINE_SHOP_APP" class="btn btn-secondary" target="_blank">Source Code</a>
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="project-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Talk To Liam Ai</h3>
-                    <p>A fully functional e-commerce web application featuring product catalog, shopping cart functionality, and responsive design for seamless online shopping experience.</p>
-                    <div class="project-buttons">
-                        <a href="https://liam-ai-main.vercel.app" class="btn btn-primary" target="_blank">Live Demo</a>
-                        <a href="https://github.com/1Agahan1/liam.ai/tree/main" class="btn btn-secondary" target="_blank">Source Code</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-  <div class="footer-content">
-    <div class="footer-col profile">
-      <h2><span style="color:#69c3ff">John</span> Doe</h2>
-      <p>Software Engineer passionate about creating innovative digital solutions and clean code architecture.</p>
-      <div class="footer-social">
-        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      </div>
-    </div>
-    <div class="footer-col links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col updates">
-      <h3>Latest Updates</h3>
-      <ul>
-        <li>
-          <span>New project launched: E-commerce Platform</span><br>
-          <small>2 days ago</small>
-        </li>
-        <li>
-          <span>Speaking at Tech Conference 2024</span><br>
-          <small>1 week ago</small>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <hr class="footer-divider">
-  <div class="footer-bottom">
-    <span>&copy; 2024 John Doe. All rights reserved.</span>
-  </div>
-  <button id="scrollToTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
-</footer>
-    <script src="portfolio-projects.js"></script>
+<p>Projects now live on <a href="index.html#work">the portfolio home</a> — taking you there…</p>
+<script>location.replace("index.html#work");</script>
 </body>
 </html>

@@ -268,11 +268,14 @@ h2.sec-title{font-size:clamp(30px,4.4vw,44px);margin:6px 0 0;letter-spacing:-.03
 .contact-left p{color:var(--mut);max-width:420px;margin:0 0 30px}
 .socials{display:flex;gap:16px;flex-wrap:wrap}
 .socials a{
-  width:104px;height:104px;border-radius:50%;display:grid;place-items:center;text-align:center;
-  border:1.5px solid var(--line2);text-decoration:none;font-weight:600;font-size:13.5px;line-height:1.3;
+  width:104px;height:104px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;text-align:center;
+  border:1.5px solid var(--line2);text-decoration:none;font-weight:600;font-size:13.5px;line-height:1.2;
   transition:all .25s cubic-bezier(.34,1.56,.64,1);background:var(--card);
 }
-.socials a small{display:block;font:10px ui-monospace,Menlo,Consolas,monospace;color:var(--mut);font-weight:400;margin-top:2px}
+.socials .ico{width:26px;height:26px;fill:currentColor;transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+.socials a:hover .ico{transform:scale(1.15) translateY(-1px)}
+.socials .lbl{letter-spacing:-.01em}
+.socials a small{display:block;font:10px ui-monospace,Menlo,Consolas,monospace;color:var(--mut);font-weight:400;margin-top:0}
 .socials a:hover{transform:translateY(-5px) scale(1.05);border-color:var(--green);color:var(--green);box-shadow:var(--shadow)}
 form.contact{display:flex;flex-direction:column;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
 form.contact label{font:11px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);display:block;margin-bottom:6px}
@@ -360,6 +363,7 @@ dialog#proj[open]{animation:pop .32s cubic-bezier(.22,1,.36,1)}
   .certs .cert-name{flex-basis:100%;order:3}
   .issuer{width:auto}
   .socials a{width:92px;height:92px;font-size:12.5px}
+  .socials .ico{width:22px;height:22px}
   .badge{position:static;width:max-content;margin:16px auto 0}
   h1{font-size:clamp(56px,15vw,84px)}
   nav.main a[href="#credentials"]{display:none}
@@ -522,9 +526,18 @@ dialog#proj[open]{animation:pop .32s cubic-bezier(.22,1,.36,1)}
         <h2>Let’s <em>talk.</em></h2>
         <p>Open to internships, freelance work and collaborations. Tell me what you’re building — I’ll reply as soon as I can.</p>
         <div class="socials">
-          <a href="https://github.com/1Agahan1" target="_blank" rel="noopener noreferrer">GitHub<small>@1Agahan1</small></a>
-          <a href="https://codepen.io/Dan-Williams-Nesortado" target="_blank" rel="noopener noreferrer">CodePen<small>experiments</small></a>
-          <a href="mailto:nesortadodanwilliams@gmail.com">Email<small>say hi</small></a>
+          <a href="https://github.com/1Agahan1" target="_blank" rel="noopener noreferrer" aria-label="GitHub — @1Agahan1">
+            <svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            <span class="lbl">GitHub</span><small>@1Agahan1</small>
+          </a>
+          <a href="https://codepen.io/Dan-Williams-Nesortado" target="_blank" rel="noopener noreferrer" aria-label="CodePen — experiments">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.144 13.067v-2.134L16.55 12zm1.276 1.194a.628.628 0 0 1-.006.083l-.005.028-.011.053-.01.031a.443.443 0 0 1-.017.047l-.014.03a.78.78 0 0 1-.021.043l-.019.03a.57.57 0 0 1-.08.1l-.026.025a.602.602 0 0 1-.036.03l-.029.022-.01.008-6.782 4.522a.637.637 0 0 1-.708 0L4.864 14.79l-.01-.008a.467.467 0 0 1-.029-.022.53.53 0 0 1-.036-.03l-.026-.025a.56.56 0 0 1-.08-.1l-.019-.03a.588.588 0 0 1-.021-.043l-.014-.03a.57.57 0 0 1-.017-.047l-.01-.031a.56.56 0 0 1-.011-.053l-.005-.028a.628.628 0 0 1-.006-.083V9.739a.62.62 0 0 1 .006-.083l.005-.027.011-.054.01-.03a.574.574 0 0 1 .038-.078l.019-.03a.588.588 0 0 1 .08-.1l.026-.025c.012-.01.024-.02.036-.03l.029-.023.01-.007 6.782-4.521a.638.638 0 0 1 .708 0l6.782 4.521.01.007.029.023.036.03.026.025a.588.588 0 0 1 .08.1l.019.03.021.043.014.03c.007.015.012.032.017.047l.01.031c.004.018.008.036.011.054l.005.027a.619.619 0 0 1 .006.083zM12 0C5.373 0 0 5.372 0 12c0 6.627 5.373 12 12 12 6.628 0 12-5.373 12-12 0-6.628-5.372-12-12-12m0 10.492-2.036 1.363L12 13.218l2.036-1.363zm.64 2.845v2.822l3.577-2.394-1.602-1.073zm-5.504 1.041 3.577 2.394v-2.822l-1.975-1.323zm9.238-2.378-1.602-1.073-2.132 1.428v2.66zm-6.782 0v-2.66L7.46 10.927l-1.602 1.073zm-.64-3.212L5.375 11.18v2.134l1.594-1.067zm5.504-1.041L12.64 5.353v2.822l1.975 1.323zm-4.224 0 1.975-1.323V5.353l-3.577 2.394z"/></svg>
+            <span class="lbl">CodePen</span><small>experiments</small>
+          </a>
+          <a href="mailto:nesortadodanwilliams@gmail.com" aria-label="Email — say hi">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span class="lbl">Email</span><small>say hi</small>
+          </a>
         </div>
       </div>
       <form class="contact rv" style="--i:1" id="contactForm" novalidate>
